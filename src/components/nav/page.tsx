@@ -1,8 +1,17 @@
+"use client";
 import { Menu } from 'lucide-react';
+import {useState} from 'react';
 
 const Nav = () => {
+    const [expanded, setExpanded] = useState(false);
+
+    const handleToggleMenu = () => {
+        console.log(expanded);
+        setExpanded(!expanded);
+    }
+
     return (
-        <nav className="flex flex-row justify-between items-center">
+        <nav className={`flex flex-row justify-between ${expanded ? 'items-start' : 'items-center'}`}>
             <ul className="hidden lg:flex flex-row flex-wrap gap-4 text-xl font-[family-name:var(--font-quicksand)]">
                 <li className="text-[var(--color-primary-blue)] font-bold font-[family-name:var(--font-montserrat)]">Home</li>
                 <li className="menu-item">Events</li>
@@ -11,7 +20,12 @@ const Nav = () => {
                 <li className="menu-item">Collaborator</li>
                 <li className="menu-item">Testimonials</li>
             </ul>
-            <Menu className='lg:hidden' />
+            <ul onClick={handleToggleMenu} className={`lg:hidden ${expanded ? 'flex flex-col' : 'hidden'}`}>
+                <li>Test</li>
+                <li>Test</li>
+                <li>Test</li>
+            </ul>
+            <Menu onClick={handleToggleMenu} className={`lg:hidden ${expanded ? 'hidden' : 'block'}`} />
             <h1 className="font-[family-name:var(--font-montserrat)] font-bold text-2xl sm:text-3xl lg:text-4xl">Memphis Tech Scene</h1>
         </nav>
     )
