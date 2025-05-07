@@ -33,7 +33,15 @@ const Testimonials = () => {
     }, []);
 
     if (isLoading) {
-        return <p>Loading testimonials...</p>;
+        return <p className="text-center font-normal text-gray-700">Loading testimonials...</p>;
+    }
+
+    if (!isLoading && testimonials.length === 0) {
+        return (
+            <p className="text-center text-gray-700 font-normal">
+                No testimonials available at the moment.
+            </p>
+        );
     }
     
     return (
