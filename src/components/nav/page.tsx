@@ -16,7 +16,7 @@ const Nav = () => {
     }
 
     return (
-        <nav className={`flex flex-row px-4 xl:px-12 py-2 bg-[var(--nav-backgroundcolor)] ${expanded ? 'relative items-start justify-end' : 'items-center justify-between'}`}>
+        <nav className={`flex flex-row justify-between items-center px-4 xl:px-12 py-2 bg-[var(--nav-backgroundcolor)] ${expanded ? 'relative' : ' '}`}>
             <ul onClick={handleToggleMenu} className={` xl:flex flex-row flex-wrap gap-4 text-xl font-quicksand ${expanded ? ' absolute top-0 left-0 z-50 bg-transparent pt-12 sm:pt-14 ml-4' : 'hidden'}`}>
                 <li className={`${pageLocation==='/' ? 'cursor-pointer bg-white xl:bg-transparent text-[var(--color-primary-blue)] font-bold font-montserrat hover:text-[var(--color-primary-blue)] hover:underline':'menu-item cursor-pointer bg-white xl:bg-transparent hover:text-[var(--color-primary-blue)] hover:underline'}`}>Home</li>
                 <li className={`${pageLocation==='/events' ? 'cursor-pointer bg-white xl:bg-transparent text-[var(--color-primary-blue)] font-bold font-montserrat hover:text-[var(--color-primary-blue)] hover:underline':'menu-item cursor-pointer bg-white xl:bg-transparent hover:text-[var(--color-primary-blue)] hover:underline'}`}>Events</li>
@@ -25,7 +25,7 @@ const Nav = () => {
                 <li className="menu-item cursor-pointer bg-white xl:bg-transparent hover:text-[var(--color-primary-blue)] hover:underline">Collaborator</li>
                 <li className="menu-item cursor-pointer bg-white xl:bg-transparent hover:text-[var(--color-primary-blue)] hover:underline">Testimonials</li>
             </ul>
-            <Menu onClick={handleToggleMenu} className={`xl:hidden ${expanded ? 'hidden' : 'block'}`} />
+            <Menu onClick={handleToggleMenu} className={`xl:hidden `} />
             <h1 className="font-montserrat font-bold text-2xl sm:text-3xl xl:text-4xl z-50">Memphis Tech Scene</h1>
         </nav>
     )
