@@ -1,4 +1,3 @@
-import Image from "next/image";
 import Nav from "@/components/nav/page";
 import Teaser from "@/components/teaser/page";
 import Testimonials from "@/components/testimonials/page";
