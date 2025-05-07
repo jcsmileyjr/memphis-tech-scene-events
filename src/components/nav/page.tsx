@@ -11,7 +11,7 @@ const Nav = () => {
     }
 
     return (
-        <nav className={`flex flex-row justify-between ${expanded ? 'items-start' : 'items-center'}`}>
+        <nav className={`flex flex-row  ${expanded ? 'relative items-start justify-end' : 'items-center justify-between'}`}>
             <ul className="hidden lg:flex flex-row flex-wrap gap-4 text-xl font-[family-name:var(--font-quicksand)]">
                 <li className="text-[var(--color-primary-blue)] font-bold font-[family-name:var(--font-montserrat)]">Home</li>
                 <li className="menu-item">Events</li>
@@ -20,7 +20,7 @@ const Nav = () => {
                 <li className="menu-item">Collaborator</li>
                 <li className="menu-item">Testimonials</li>
             </ul>
-            <ul onClick={handleToggleMenu} className={`lg:hidden ${expanded ? 'flex flex-col' : 'hidden'}`}>
+            <ul onClick={handleToggleMenu} className={`lg:hidden ${expanded ? ' absolute top-0 left-0 z-50 bg-white' : 'hidden'}`}>
                 <li>Test</li>
                 <li>Test</li>
                 <li>Test</li>
