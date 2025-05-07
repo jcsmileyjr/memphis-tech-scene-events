@@ -6,7 +6,7 @@ export default function Home() {
   return (
     <div className=" min-h-screen pb-20 gap-16 font-[family-name:var(--font-quicksand)]">
       <Nav />
-      <main className="flex flex-col px-8 gap-8">
+      <main className="flex flex-col px-4 gap-8">
         <Teaser />
       </main>
     </div>
