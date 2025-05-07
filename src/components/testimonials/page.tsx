@@ -15,23 +15,44 @@ import { useMediaQuery } from 'react-responsive';
  */
 const Testimonials = () => {
     const [testimonials, setTestimonials] = useState<TestimonialInterface[]>([]);
+    const [isLoading, setIsLoading] = useState(true);
     const isTabletOrMobile = useMediaQuery({ query: '(max-width: 1280px)' });
     
     useEffect(() => {
         const fetchTestimonials = async () => {
-            const fetchedTestimonials = await getTestimonials();
-            console.log("testimonials", fetchedTestimonials);
-            setTestimonials(fetchedTestimonials);
+            try {
+                const fetchedTestimonials: TestimonialInterface[] = await getTestimonials();
+                setTestimonials(fetchedTestimonials);
+            } catch (error) {
+                console.error("Failed to fetch testimonials:", error);
+            } finally {
+                setIsLoading(false);
+            }
         };
         fetchTestimonials();
     }, []);
+
+    if (isLoading) {
+        return <p>Loading testimonials...</p>;
+    }
     
     return (
-        <section className="flex flex-row flex-wrap justify-around gap-2 py-4">
-        {isTabletOrMobile 
-            ? <Testimonial key={testimonials[0].testimonialId} content={testimonials[0].content} name={testimonials[0].name} title={testimonials[0].title} community={testimonials[0].community} /> 
+        <section aria-label="Testimonials Section" className="flex flex-row flex-wrap justify-around gap-2 py-4">
+
+        {isTabletOrMobile && testimonials.length > 0 
+            ? <Testimonial 
+                key={testimonials[0].testimonialId} 
+                content={testimonials[0].content} 
+                name={testimonials[0].name} 
+                title={testimonials[0].title} 
+                community={testimonials[0].community} /> 
             : testimonials.map((testimonial) => (
-                <Testimonial key={testimonial.testimonialId} content={testimonial.content} name={testimonial.name} title={testimonial.title} community={testimonial.community} />
+                <Testimonial 
+                    key={testimonial.testimonialId} 
+                    content={testimonial.content} 
+                    name={testimonial.name} 
+                    title={testimonial.title} 
+                    community={testimonial.community} />
             ))}
         </section>
     )
