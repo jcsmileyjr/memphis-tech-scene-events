@@ -4,6 +4,7 @@
   --background: #ffffff;
   --foreground: #171717;
   --color-primary-blue: #2350CB;
+  --nav-backgroundcolor: rgba(173, 216, 230, 0.3);
 }
 
 @theme inline {
