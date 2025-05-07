@@ -3,6 +3,8 @@
 :root {
   --background: #ffffff;
   --foreground: #171717;
+  --color-primary-blue: #2350CB;
+  --nav-backgroundcolor: rgba(173, 216, 230, 0.3);
 }
 
 @theme inline {
@@ -10,13 +12,16 @@
   --color-foreground: var(--foreground);
   --font-sans: var(--font-geist-sans);
   --font-mono: var(--font-geist-mono);
+  --font-quicksand: var(--font-quicksand);
+  --font-montserrat: var(--font-montserrat);
 }
 
 @media (prefers-color-scheme: dark) {
-  :root {
+  /* Turn off during development*/
+  /* :root {
     --background: #0a0a0a;
     --foreground: #ededed;
-  }
+  } */
 }
 
 body {

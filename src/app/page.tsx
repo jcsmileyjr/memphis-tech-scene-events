@@ -1,9 +1,14 @@
 import Image from "next/image";
+import Nav from "@/components/nav/page";
+import Teaser from "@/components/teaser/page";
 
 export default function Home() {
   return (
-    <div className=" min-h-screen p-8 pb-20 gap-16 sm:p-20 font-[family-name:var(--font-geist-sans)]">
-      <nav className="flex justify-between">Hello World</nav>
+    <div className=" min-h-screen pb-20 gap-16 font-[family-name:var(--font-quicksand)]">
+      <Nav />
+      <main className="flex flex-col px-4 gap-8">
+        <Teaser />
+      </main>
     </div>
   );
 }
