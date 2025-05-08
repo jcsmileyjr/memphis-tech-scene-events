@@ -36,22 +36,21 @@ const LP_Events = () => {
     }
 
     return (
-        <section aria-label="Events Section" className="py-4 flex flex-col xl:flex-row gap-4 justify-between">
-            <div className='flex-1'>
-                <h2 className="text-5xl font-bold font-montserrat pb-4">Upcoming Events</h2>
-                <div className='flex flex-col xl:flex-row justify-between gap-8 pb-4 xl:h-[280px]'>
-
-                {isTabletOrMobile && events.length > 0
-                    ? events.map((meetup, index) => (
-                        index < 2 && <LP_Event key={meetup.id} name={meetup.name} date={meetup.date} description={meetup.description} />
-                    ))
-                    : events.map((meetup) => (
-                        <LP_Event key={meetup.id} name={meetup.name} date={meetup.date} description={meetup.description} />
-                    ))}
+        <section aria-label="Events Section" className="py-4 flex flex-col sm:flex-row gap-8 sm:gap-4 justify-between">
+            <div className='flex-1 flex flex-col justify-between'>
+                <h2 className=" text-2xl xl:text-5xl font-bold font-montserrat pb-4">Upcoming Events</h2>
+                <div className='flex flex-col lg:flex-row justify-between gap-8 pb-4  lg:h-[280px]'>
+                    {isTabletOrMobile && events.length > 0
+                        ? events.map((meetup, index) => (
+                            index < 2 && <LP_Event key={meetup.id} name={meetup.name} date={meetup.date} description={meetup.description} />
+                        ))
+                        : events.map((meetup) => (
+                            <LP_Event key={meetup.id} name={meetup.name} date={meetup.date} description={meetup.description} />
+                        ))}
                 </div>
                 <p className='font-medium text-xl font-montserrat'>View All Events</p>
             </div>
-            <div>
+            <div className=''>
                 <Image 
                     src="/images/community_1.png" 
                     alt="Community event" 
