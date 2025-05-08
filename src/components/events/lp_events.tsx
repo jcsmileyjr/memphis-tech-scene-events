@@ -1,16 +1,10 @@
+'use client';
+import React, { useEffect, useState } from 'react';
 import Image from 'next/image';
-import { BugPlay } from 'lucide-react';
-
-const LP_Event = ({ name, date, description }: { name: string, date: string, description: string }) => {
-    return (
-        <div className='flex-1 h-full border-[#D9D9D9] border p-4 flex flex-col justify-between font-quicksand font-normal rounded-lg shadow-md'>
-            <BugPlay size={48} />
-            <p className='font-bold text-xl font-montserrat'>{name}</p>
-            <p>{date}</p>
-            <p>{description}</p>
-        </div>
-    )
-}
+import LP_Event from "./lp_event";
+import { useMediaQuery } from 'react-responsive';
+import { getEvents } from "@/server/events.server";
+import EventInterface from "@/interfaces/eventInterface";
 
 const events = [
     { id: 1, name: "Memphis Python User Group", date: "April 28, 2025", description: "Let’s Talk Ollama” tech talk by Douglas Starnes" },
@@ -19,14 +13,39 @@ const events = [
 ];
 
 const LP_Events = () => {
+    const [events, setEvents] = useState<EventInterface[]>([]);
+    const [isLoading, setIsLoading] = useState(true);
+    const isTabletOrMobile = useMediaQuery({ query: '(max-width: 1280px)' });
+
+    useEffect(() => {
+        const fetchEvents = async () => {
+            try {
+                const fetchedEvents: EventInterface[] = await getEvents();
+                setEvents(fetchedEvents);
+            } catch (error) {
+                console.error("Failed to fetch events:", error);
+            } finally {
+                setIsLoading(false);
+            }
+        };
+        fetchEvents();
+    }, []);
+
+    if (isLoading) {
+        return <p className="text-center font-normal text-gray-700">Loading events...</p>;
+    }
+
     return (
         <section className="py-4 px-4 xl-px-12 flex flex-row gap-4 justify-between">
             <div className='flex-1'>
                 <h2 className="text-5xl font-bold font-montserrat pb-4">Upcoming Events</h2>
                 <div className='flex flex-row justify-between gap-8 pb-4 h-[280px]'>
-                {events.map((meetup) => (
-                    <LP_Event key={meetup.id} name={meetup.name} date={meetup.date} description={meetup.description} />
-                ))}
+
+                {isTabletOrMobile && events.length > 0
+                    ? <LP_Event key={events[0].id} name={events[0].name} date={events[0].date} description={events[0].description} />
+                    : events.map((meetup) => (
+                        <LP_Event key={meetup.id} name={meetup.name} date={meetup.date} description={meetup.description} />
+                    ))}
                 </div>
                 <p className='font-medium text-xl font-montserrat'>View All Events</p>
             </div>
