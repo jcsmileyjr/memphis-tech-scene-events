@@ -36,13 +36,15 @@ const LP_Events = () => {
     }
 
     return (
-        <section className="py-4 flex flex-col xl:flex-row gap-4 justify-between">
+        <section aria-label="Events Section" className="py-4 flex flex-col xl:flex-row gap-4 justify-between">
             <div className='flex-1'>
                 <h2 className="text-5xl font-bold font-montserrat pb-4">Upcoming Events</h2>
-                <div className='flex flex-row justify-between gap-8 pb-4 h-[280px]'>
+                <div className='flex flex-col xl:flex-row justify-between gap-8 pb-4 xl:h-[280px]'>
 
                 {isTabletOrMobile && events.length > 0
-                    ? <LP_Event key={events[0].id} name={events[0].name} date={events[0].date} description={events[0].description} />
+                    ? events.map((meetup, index) => (
+                        index < 2 && <LP_Event key={meetup.id} name={meetup.name} date={meetup.date} description={meetup.description} />
+                    ))
                     : events.map((meetup) => (
                         <LP_Event key={meetup.id} name={meetup.name} date={meetup.date} description={meetup.description} />
                     ))}
