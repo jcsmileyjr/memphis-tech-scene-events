@@ -36,7 +36,7 @@ const LP_Events = () => {
     }
 
     return (
-        <section className="py-4 px-4 xl-px-12 flex flex-row gap-4 justify-between">
+        <section className="py-4 flex flex-col xl:flex-row gap-4 justify-between">
             <div className='flex-1'>
                 <h2 className="text-5xl font-bold font-montserrat pb-4">Upcoming Events</h2>
                 <div className='flex flex-row justify-between gap-8 pb-4 h-[280px]'>

@@ -45,7 +45,7 @@ const LP_Testimonials = () => {
     }
     
     return (
-        <section aria-label="Testimonials Section" className="flex flex-row flex-wrap justify-around gap-2 py-4">
+        <section aria-label="Testimonials Section" className="flex flex-row flex-wrap justify-between gap-2 py-4">
 
         {isTabletOrMobile && testimonials.length > 0 
             ? <Testimonial 

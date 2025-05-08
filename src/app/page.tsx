@@ -7,7 +7,7 @@ export default function Home() {
   return (
     <div className=" min-h-screen pb-20 gap-16 font-quicksand">
       <Nav />
-      <main className="flex flex-col px-4 gap-2">
+      <main className="flex flex-col px-4 xl:px-12 gap-2">
         <Teaser />
         <LP_Testimonials />
         <LP_Events />
