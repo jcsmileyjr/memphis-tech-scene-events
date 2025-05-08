@@ -1,6 +1,7 @@
-import Nav from "@/components/nav/page";
-import Teaser from "@/components/teaser/page";
-import Testimonials from "@/components/testimonials/page";
+import Nav from "@/components/nav/nav";
+import Teaser from "@/components/teaser/teaser";
+import LP_Testimonials from "@/components/testimonials/lp_testimonials";
+import LP_Events from "@/components/events/lp_events";
 
 export default function Home() {
   return (
@@ -8,7 +9,8 @@ export default function Home() {
       <Nav />
       <main className="flex flex-col px-4 gap-2">
         <Teaser />
-        <Testimonials />
+        <LP_Testimonials />
+        <LP_Events />
       </main>
     </div>
   );
