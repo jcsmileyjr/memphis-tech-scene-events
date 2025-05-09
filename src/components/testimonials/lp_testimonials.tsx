@@ -4,6 +4,7 @@ import Testimonial from "./testimonial";
 import { getTestimonials } from "@/server/testimonial.server";
 import TestimonialInterface from "@/interfaces/testimonialInterface";
 import { useMediaQuery } from 'react-responsive';
+import { sanitizeQuotes } from "@/libs/sanitizeQuotes";
 
 /**
  * Component that renders a section of testimonials. When the screen size is 
@@ -22,7 +23,14 @@ const LP_Testimonials = () => {
         const fetchTestimonials = async () => {
             try {
                 const fetchedTestimonials: TestimonialInterface[] = await getTestimonials();
-                setTestimonials(fetchedTestimonials);
+                const sanitizedTestimonials = fetchedTestimonials.map(testimonial => ({
+                    ...testimonial,
+                    content: sanitizeQuotes(testimonial.content),
+                    name: sanitizeQuotes(testimonial.name),
+                    title: sanitizeQuotes(testimonial.title),
+                    community: sanitizeQuotes(testimonial.community),
+                }));             
+                setTestimonials(sanitizedTestimonials);
             } catch (error) {
                 console.error("Failed to fetch testimonials:", error);
             } finally {

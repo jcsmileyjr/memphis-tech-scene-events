@@ -5,7 +5,7 @@ import LP_Event from "./lp_event";
 import { useMediaQuery } from 'react-responsive';
 import { getEvents } from "@/server/events.server";
 import EventInterface from "@/interfaces/eventInterface";
-import EventIconName from '@/interfaces/eventIconEnum';
+import { sanitizeQuotes } from '@/libs/sanitizeQuotes';
 
 const LP_Events = () => {
     const [events, setEvents] = useState<EventInterface[]>([]);
@@ -16,7 +16,12 @@ const LP_Events = () => {
         const fetchEvents = async () => {
             try {
                 const fetchedEvents: EventInterface[] = await getEvents();
-                setEvents(fetchedEvents);
+                const sanitizedEvents = fetchedEvents.map(event => ({
+                    ...event,
+                    name: sanitizeQuotes(event.name),
+                    description: sanitizeQuotes(event.description),
+                }));
+                setEvents(sanitizedEvents);
             } catch (error) {
                 console.error("Failed to fetch events:", error);
             } finally {
