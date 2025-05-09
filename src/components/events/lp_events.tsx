@@ -35,6 +35,14 @@ const LP_Events = () => {
         return <p className="text-center font-normal text-gray-700">Loading events...</p>;
     }
 
+    if (!isLoading && events.length === 0) {
+        return (
+            <p className="text-center text-gray-700 font-normal">
+                No events available at the moment.
+            </p>
+        );
+    }
+
     return (
         <section aria-label="Events Section" className="py-4 flex flex-col sm:flex-row gap-8 sm:gap-4 justify-between">
             <div className='flex-1 flex flex-col justify-between'>
