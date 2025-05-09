@@ -8,9 +8,14 @@ export default function Home() {
     <div className=" min-h-screen pb-20 gap-16 font-quicksand">
       <Nav />
       <main className="flex flex-col px-4 xl:px-12 gap-2">
-        <Teaser />
-        <LP_Testimonials />
-        <LP_Events />
+        <>
+          <Teaser />
+          <LP_Testimonials />
+          <LP_Events />
+        </>
+        <div className="bg-[var(--landingpage-submitevent-backgroundcolor)]">
+          <div>Test</div>
+        </div>
       </main>
     </div>
   );
