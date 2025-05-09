@@ -3,6 +3,7 @@ import Teaser from "@/components/teaser/teaser";
 import LP_Testimonials from "@/components/testimonials/lp_testimonials";
 import LP_Events from "@/components/events/lp_events";
 import CTAEvents from "@/components/ctaEvents/cta_events";
+import CTA_Newsletter from "@/components/cta_newsletter/cta_newsletter";
 
 export default function Home() {
   return (
@@ -16,6 +17,7 @@ export default function Home() {
         </div>
         <div className="bg-[var(--landingpage-submitevent-backgroundcolor)] px-4 xl:px-12 w-full">
           <CTAEvents />
+          <CTA_Newsletter />
         </div>
       </main>
     </div>
