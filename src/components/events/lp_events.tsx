@@ -48,7 +48,12 @@ const LP_Events = () => {
                             <LP_Event key={meetup.id} name={meetup.name} date={meetup.date} description={meetup.description} iconName={meetup.iconName} />
                         ))}
                 </div>
-                <p className='font-medium text-xl font-montserrat'>View All Events</p>
+                <div className='flex flex-row gap-4 items-center'>
+                    <p className='font-medium text-xl font-montserrat'>View All Events</p>
+                    <div className='bg-[var(--event-pill-backgroundcolor)] py-2 px-6 shadow-md'>
+                        <p className='text-center font-montserrat text-sm'>15 total</p>
+                    </div>
+                </div>
             </div>
             <div className=''>
                 <Image 
