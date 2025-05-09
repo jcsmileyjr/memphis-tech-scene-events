@@ -1,10 +1,11 @@
 import LP_Event_Icon from "./lp_event_icon";
+import EventIconName from "@/interfaces/eventIconEnum";
 
 interface EventProps {
     name: string;
     date: string;
     description: string;
-    iconName: string;
+    iconName: EventIconName;
 }
 
 const LP_Event = ({ name, date, description, iconName }: EventProps) => {

@@ -5,12 +5,7 @@ import LP_Event from "./lp_event";
 import { useMediaQuery } from 'react-responsive';
 import { getEvents } from "@/server/events.server";
 import EventInterface from "@/interfaces/eventInterface";
-
-const events = [
-    { id: 1, name: "Memphis Python User Group", date: "April 28, 2025", description: "Let’s Talk Ollama” tech talk by Douglas Starnes" },
-    { id: 2, name: "Memphis Tech Luncheon", date: "April 30, 2025", description: "Lunch is at Epicenter Memphis" },
-    { id: 3, name: "Memphis AI/AR Meetup", date: "April 30, 2025", description: "An Manifesto for AI in Memphis" },
-];
+import EventIconName from '@/interfaces/eventIconEnum';
 
 const LP_Events = () => {
     const [events, setEvents] = useState<EventInterface[]>([]);
