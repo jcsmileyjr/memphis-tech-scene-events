@@ -2,7 +2,7 @@
 
 const Teaser = () => {
     return (
-        <section className="flex flex-col gap-2 m-auto py-4 text-xl">
+        <section aria-label="Teaser Section" className="flex flex-col gap-2 m-auto py-4 text-xl">
             <div className="text-[var(--color-primary-blue)] uppercase font-bold">
                 Single source 
                 <span className="font-normal lowercase text-black px-2">of</span> 
