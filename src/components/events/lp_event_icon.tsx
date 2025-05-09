@@ -9,9 +9,9 @@ const LP_Event_Icon = ({iconName}: EventIconProp) => {
     return (
         <div className=''>
             {
-                iconName === "sandwich" ? <Sandwich size={48} /> : 
-                iconName === "bot" ? <Bot size={48} /> : 
-                <BugPlay size={48} />
+                iconName === "sandwich" ? <Sandwich color="orange" className='w-8 h-8' /> : 
+                iconName === "bot" ? <Bot color="blue"  className='w-8 h-8' /> : 
+                <BugPlay color="green"  className='w-8 h-8' />
             }
         </div>
     )
