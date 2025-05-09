@@ -5,6 +5,7 @@ interface EventInterface {
     date: string,
     time: string,
     description: string,
+    iconName: string,
 }
 
 export default EventInterface;

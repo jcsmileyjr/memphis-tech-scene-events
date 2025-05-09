@@ -42,10 +42,10 @@ const LP_Events = () => {
                 <div className='flex flex-col lg:flex-row justify-between gap-8 pb-4  lg:h-[280px]'>
                     {isTabletOrMobile && events.length > 0
                         ? events.map((meetup, index) => (
-                            index < 2 && <LP_Event key={meetup.id} name={meetup.name} date={meetup.date} description={meetup.description} />
+                            index < 2 && <LP_Event key={meetup.id} name={meetup.name} date={meetup.date} description={meetup.description} iconName={meetup.iconName} />
                         ))
                         : events.map((meetup) => (
-                            <LP_Event key={meetup.id} name={meetup.name} date={meetup.date} description={meetup.description} />
+                            <LP_Event key={meetup.id} name={meetup.name} date={meetup.date} description={meetup.description} iconName={meetup.iconName} />
                         ))}
                 </div>
                 <p className='font-medium text-xl font-montserrat'>View All Events</p>
