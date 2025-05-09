@@ -9,7 +9,7 @@ const Teaser = () => {
                 truth 
             </div>
             <div className="font-base lowercase text-black pl-24 sm:pl-24">
-                for<span className="hidden sm:inline">upcoming</span>
+                for<span className="hidden sm:inline"> upcoming</span>
                 <span className="text-[var(--color-primary-blue)] uppercase font-bold px-2">tech 
                     <span className="hidden sm:inline pl-2">events</span>
                 </span>
