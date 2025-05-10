@@ -10,7 +10,7 @@ export default function Home() {
     <div className=" min-h-screen pb-20 gap-16 font-quicksand">
       <Nav />
       <main className="flex flex-col gap-2">
-        <div className="px-4 xl:px-12">
+        <div className="flex flex-col gap-2 px-4 xl:px-12">
           <Teaser />
           <LP_Testimonials />
           <LP_Events />
