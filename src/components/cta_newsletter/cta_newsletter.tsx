@@ -10,12 +10,12 @@ const CTA_Newsletter = () => {
                         alt="Newsletter logo" 
                         height={100}
                         width={100}
-                        className="rounded-lg h-24 w-24 md:w-48 md:h-48" 
+                        className="rounded-lg h-24 w-24 md:w-32 md:h-32 xl:w-48 xl:h-48" 
                     />
                     <p className='block md:hidden font-bold text-2xl md:text-5xl'>Stay in the loop!</p>
                 </div>
                 <div className='flex flex-col justify-between font-montserrat'>
-                    <p className='hidden md:block font-bold text-2xl md:text-5xl'>Stay in the loop!</p>
+                    <p className='hidden md:block font-bold text-2xl md:text-3xl xl:text-5xl'>Stay in the loop!</p>
                     <p className='text-xl font-medium md:font-semibold'>Subscribe to our newsletter</p>
                     <button type='button' className=" text-[var(--color-primary-blue)] bg-white font-bold text-xl px-2 py-2 rounded-md mt-4 border-1 border-solid border-[var(--color-primary-blue)] hover:bg-[var(--color-primary-blue)] hover:text-white transition duration-300 ease-in-out">
                         Subscribe   
