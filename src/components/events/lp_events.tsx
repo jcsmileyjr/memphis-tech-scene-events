@@ -63,7 +63,7 @@ const LP_Events = () => {
                     </div>
                 </div>
             </div>
-            <div className=''>
+            <div className='sm:hidden xl:block'>
                 <Image 
                     src="/images/community_1.png" 
                     alt="Community event" 
