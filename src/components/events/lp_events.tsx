@@ -10,7 +10,7 @@ import { sanitizeQuotes } from '@/libs/sanitizeQuotes';
 const LP_Events = () => {
     const [events, setEvents] = useState<EventInterface[]>([]);
     const [isLoading, setIsLoading] = useState(true);
-    const isTabletOrMobile = useMediaQuery({ query: '(max-width: 1280px)' });
+    const isMobileDevice = useMediaQuery({query: "(max-width: 767px)"});
 
     useEffect(() => {
         const fetchEvents = async () => {
@@ -44,11 +44,11 @@ const LP_Events = () => {
     }
 
     return (
-        <section aria-label="Events Section" className="py-4 flex flex-col sm:flex-row gap-8 sm:gap-4 justify-between">
+        <section aria-label="Events Section" className="py-4 flex flex-col xl:flex-row gap-8 sm:gap-4 justify-between">
             <div className='flex-1 flex flex-col justify-between'>
                 <h2 className=" text-2xl xl:text-5xl font-bold font-montserrat pb-4">Upcoming Events</h2>
-                <div className='flex flex-col lg:flex-row justify-between gap-8 pb-4  lg:h-[280px]'>
-                    {isTabletOrMobile && events.length > 0
+                <div className='flex flex-col sm:flex-row justify-between gap-8 lg:gap-10 xl:gap-8 pb-4  lg:h-[280px]'>
+                    {isMobileDevice && events.length > 0
                         ? events.map((meetup, index) => (
                             index < 2 && <LP_Event key={meetup.id} name={meetup.name} date={meetup.date} description={meetup.description} iconName={meetup.iconName} />
                         ))
@@ -63,13 +63,13 @@ const LP_Events = () => {
                     </div>
                 </div>
             </div>
-            <div className=''>
+            <div className='sm:hidden xl:block'>
                 <Image 
                     src="/images/community_1.png" 
                     alt="Community event" 
                     width={500} 
                     height={300} 
-                    className="rounded-lg shadow-md" 
+                    className="rounded-lg shadow-md w-full h-auto md:size-fit"
                 />
             </div>
         </section>
