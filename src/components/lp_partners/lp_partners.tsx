@@ -1,30 +1,31 @@
+import { getPartners } from "@/server/partners.server";
+import PartnerInterface from "@/interfaces/partnerInterface";
 
-const partners = [
-    {
-        id: 1,
-        name: "Memphis Data Professionals",
-    },
-    {
-        id: 2,
-        name: "Code Connector",
-    },
-    {
-        id: 3,
-        name: "Memphis .Net and Azure User Group",
-    },
-    {
-        id: 4,
-        name: "Memphis Python User group",
-    },
-];
+const LpPartners = async () => {
+    let partners: PartnerInterface[] = [];
+    try {
+        partners = await getPartners();
+    } catch (error) {
+        console.error("Failed to fetch partners:", error);
+    }
 
-const LpPartners = () => {
+    if (partners.length === 0) {
+        return (
+            <section aria-label="Partners Section" className="flex flex-col pt-8">
+                <h2 className="text-2xl xl:text-5xl font-bold font-montserrat pb-4">Our Partners</h2>
+                <p className="text-center text-gray-700 font-normal">No partners available at the moment.</p>
+            </section>
+        );
+    }
+
     return (
-        <section aria-label="Partners Section" className="flex flex-col pt-8">
+        <section aria-label="Partners Section" className="flex flex-col pt-8 text-xl gap-y-4">
             <h2 className="text-2xl xl:text-5xl font-bold font-montserrat pb-4">Our Partners</h2>
-            <div className="flex flex-row flex-wrap justify-between items-center">
+            <p className="font-medium">The Memphis tech community shines so brightly because of the incredible, unwavering dedication of individuals and organizations, such as these, who tirelessly teach, empower, and uplift one another.</p>
+            <p className="font-normal">"Alone we can do so little; together we can do so much."    — Helen Keller</p>
+            <div className="flex flex-row flex-wrap justify-between items-center gap-y-8 mt-8">
                 {partners.map((partner) => (
-                    <p key={partner.id} className="font-montserrat text-xl w-1/2">{partner.name}</p>
+                    <p key={partner.id} className="font-montserrat w-1/2">{partner.name}</p>
                 ))}
             </div>
         </section>

@@ -1,4 +1,4 @@
-import { getSponsors } from "@/server/sponspors.server";
+import { getSponsors } from "@/server/sponsors.server";
 import SponorInterface from "@/interfaces/sponsorInterface";
 import LpSponor from "./lp_sponor";
 
@@ -14,7 +14,7 @@ const LpSponors = async () => {
         return (
             <section aria-label="Sponsors Section" className="flex flex-col pt-8">
                 <h2 className="text-2xl xl:text-5xl font-bold font-montserrat pb-4">Our Sponsors</h2>
-                <p className="text-center text-gray-700 font-normal">Loading sponsors...</p>
+                <p className="text-center text-gray-700 font-normal">No sponsors available at the moment.</p>
             </section>
         );
     }
