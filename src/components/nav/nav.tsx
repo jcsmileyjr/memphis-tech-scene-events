@@ -25,10 +25,10 @@ const Nav = () => {
                 <li aria-current={pageLocation === '/' ? 'page' : undefined} className={`${pageLocation==='/events' ? 'cursor-pointer bg-[var(--nav-backgroundcolor-dark)] xl:bg-transparent text-[var(--color-primary-blue)] font-bold font-montserrat hover:text-[var(--color-primary-blue)] hover:underline':'menu-item cursor-pointer bg-[var(--nav-backgroundcolor-dark)] xl:bg-transparent hover:text-[var(--color-primary-blue)] hover:underline'}`}>
                     <Link href="/events">Events</Link>
                 </li>
-                <li aria-current={pageLocation === '/' ? 'page' : undefined} className="menu-item cursor-pointer bg-[var(--nav-backgroundcolor-dark)] xl:bg-transparent hover:text-[var(--color-primary-blue)] hover:underline">About</li>
-                <li aria-current={pageLocation === '/' ? 'page' : undefined} className="menu-item cursor-pointer bg-[var(--nav-backgroundcolor-dark)] xl:bg-transparent hover:text-[var(--color-primary-blue)] hover:underline">Sponsors</li>
-                <li aria-current={pageLocation === '/' ? 'page' : undefined} className="menu-item cursor-pointer bg-[var(--nav-backgroundcolor-dark)] xl:bg-transparent hover:text-[var(--color-primary-blue)] hover:underline">Collaborator</li>
-                <li aria-current={pageLocation === '/' ? 'page' : undefined} className="menu-item cursor-pointer bg-[var(--nav-backgroundcolor-dark)] xl:bg-transparent hover:text-[var(--color-primary-blue)] hover:underline">Testimonials</li>
+                <li aria-current={pageLocation === '/' ? 'page' : undefined} className="menu-item cursor-not-allowed bg-[var(--nav-backgroundcolor-dark)] xl:bg-transparent hover:text-[var(--color-primary-blue)] hover:underline">About</li>
+                <li aria-current={pageLocation === '/' ? 'page' : undefined} className="menu-item cursor-not-allowed bg-[var(--nav-backgroundcolor-dark)] xl:bg-transparent hover:text-[var(--color-primary-blue)] hover:underline">Sponsors</li>
+                <li aria-current={pageLocation === '/' ? 'page' : undefined} className="menu-item cursor-not-allowed bg-[var(--nav-backgroundcolor-dark)] xl:bg-transparent hover:text-[var(--color-primary-blue)] hover:underline">Collaborator</li>
+                <li aria-current={pageLocation === '/' ? 'page' : undefined} className="menu-item cursor-not-allowed bg-[var(--nav-backgroundcolor-dark)] xl:bg-transparent hover:text-[var(--color-primary-blue)] hover:underline">Testimonials</li>
             </ul>
             <button
                 type="button"
