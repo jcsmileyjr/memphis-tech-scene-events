@@ -1,6 +1,7 @@
 'use client';
 import React, { useEffect, useState } from 'react';
 import Image from 'next/image';
+import Link from 'next/link';
 import LP_Event from "./lp_event";
 import { useMediaQuery } from 'react-responsive';
 import { getEvents } from "@/server/events.server";
@@ -57,7 +58,9 @@ const LP_Events = () => {
                         ))}
                 </div>
                 <div className='flex flex-row gap-4 items-center'>
-                    <p className='font-medium text-xl font-montserrat'>View All Events</p>
+                    <Link href="/events" className=' '>
+                        <p className='font-medium text-xl font-montserrat underline text-[var(--color-primary-blue)]'>View All Events</p>
+                    </Link>
                     <div className='bg-[var(--event-pill-backgroundcolor)] py-2 px-6 shadow-md'>
                         <p className='text-center font-montserrat text-sm'>15 total</p>
                     </div>
