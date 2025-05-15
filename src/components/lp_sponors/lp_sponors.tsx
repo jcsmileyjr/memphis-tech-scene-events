@@ -1,11 +1,17 @@
 import { getSponsors } from "@/server/sponsors.server";
 import SponorInterface from "@/interfaces/sponsorInterface";
 import LpSponor from "./lp_sponor";
+import { sanitizeQuotes } from "@/libs/sanitizeQuotes";
 
 const LpSponors = async () => {
     let sponsors: SponorInterface[] = [];
     try {
         sponsors = await getSponsors();
+
+        for (let i = 0; i < sponsors.length; i++) {
+            sponsors[i].organization = sanitizeQuotes(sponsors[i].organization);
+            sponsors[i].description = sanitizeQuotes(sponsors[i].description);
+        }
     } catch (error) {
         console.error("Failed to fetch sponsors:", error);
     }
