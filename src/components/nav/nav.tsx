@@ -33,7 +33,7 @@ const Nav = () => {
             >
                 <Menu />
             </button>
-            <h1 className="font-montserrat font-bold text-2xl sm:text-3xl xl:text-4xl z-50">Memphis Tech Scene</h1>
+            <h1 className="font-montserrat font-bold text-xl sm:text-3xl xl:text-4xl z-50">Memphis Tech Scene</h1>
         </nav>
     )
 }
