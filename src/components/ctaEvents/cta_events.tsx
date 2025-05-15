@@ -18,7 +18,7 @@ const CTAEvents = () => {
                     <span className="text-[var(--color-primary-blue)]"> blast it across our newsletter, socials, and community.</span> Because we believe that great ideas deserve to be supported.
                 </p>
                 <div className='flex justify-center items-center mt-4'>
-                    <button type='button' className="w-2/3 lg:w-1/2 xl:w-1/3 bg-[var(--color-primary-blue)] font-montserrat text-white font-bold text-xl px-4 py-2 rounded-md ">
+                    <button type='button' className="w-2/3 lg:w-1/2 xl:w-1/3 bg-[var(--color-primary-blue)] font-montserrat text-white font-bold text-xl px-4 py-2 rounded-md transition hover:bg-white hover:text-[var(--color-primary-blue)]   duration-300 ease-in-out">
                         Submit Event    
                     </button>
                 </div>

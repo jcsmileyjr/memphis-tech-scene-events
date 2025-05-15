@@ -1,4 +1,5 @@
 import Image from 'next/image';
+import Link from 'next/link';
 
 const CTA_Newsletter = () => {
     return (
@@ -17,9 +18,9 @@ const CTA_Newsletter = () => {
                 <div className='flex flex-col justify-between font-montserrat'>
                     <p className='hidden md:block font-bold text-2xl md:text-3xl xl:text-5xl'>Stay in the loop!</p>
                     <p className='text-xl font-medium md:font-semibold'>Subscribe to our newsletter</p>
-                    <button type='button' className=" text-[var(--color-primary-blue)] bg-white font-bold text-xl px-2 py-2 rounded-md mt-4 border-1 border-solid border-[var(--color-primary-blue)] hover:bg-[var(--color-primary-blue)] hover:text-white transition duration-300 ease-in-out">
-                        Subscribe   
-                    </button>
+                    <Link href="https://memphistechscene.beehiiv.com/" className="text-[var(--color-primary-blue)] bg-white font-bold text-xl px-2 py-2 text-center rounded-md mt-4 border-1 border-solid border-[var(--color-primary-blue)] hover:bg-[var(--color-primary-blue)] hover:text-white transition duration-300 ease-in-out">
+                        Subscribe
+                    </Link>
                 </div>
             </div>
             <div className='flex-1 flex justify-center items-center mt-4 md:mt-0'>
