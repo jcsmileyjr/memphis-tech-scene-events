@@ -5,6 +5,7 @@
   --foreground: #171717;
   --color-primary-blue: #2350CB;
   --nav-backgroundcolor: rgba(173, 216, 230, 0.3);
+  --nav-backgroundcolor-dark: rgba(173, 216, 230);
   --landingpage-submitevent-backgroundcolor: rgba(135, 206, 235, 0.3);
   --landingpage-sponsor-backgroundcolor: #001F54;
   --event-pill-backgroundcolor: rgba(35, 187, 204, 0.1)
