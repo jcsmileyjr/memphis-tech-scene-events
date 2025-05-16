@@ -1,12 +1,14 @@
 import { User } from 'lucide-react';
 import Link from "next/link";
 import EventInterface from '@/interfaces/eventInterface';
+import { getMonthAndDay } from '@/libs/getMonthAndDay';
 
 const EventsEvent = ({ name, date, description, eventCategory, eventType, RSVP, time }: EventInterface) => {
+    const formattedDate = getMonthAndDay(date);
     return (
         <div className="flex flex-row gap-2 w-full">
             <div className="bg-[var(--color-primary-blue)] text-white font-montserrat flex flex-col items-center justify-center p-2 rounded-lg shadow-lg">
-                <p className="font-bold text-shadow-lg">May 28</p>
+                <p className="font-bold text-shadow-lg">{formattedDate}</p>
                 <p className="font-normal text-shadow-lg">{time}</p>
             </div>
             <div className="flex flex-col flex-1 w-full">
