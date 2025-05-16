@@ -1,5 +1,6 @@
 import EventIconName from "./eventIconEnum";
 import EventType  from "./eventTypeEnum";
+import EventCategory from "./eventCategoryEnum";
 
 interface EventInterface {
     id: number,
@@ -7,7 +8,7 @@ interface EventInterface {
     date: string,
     time: string,
     eventType: EventType,
-    eventCategory: string,
+    eventCategory: EventCategory,
     RSVP: string,
     description: string,
     shortIntro: string
