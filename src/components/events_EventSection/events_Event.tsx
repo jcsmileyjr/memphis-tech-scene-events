@@ -7,7 +7,7 @@ const EventsEvent = ({ name, date, description, eventCategory, eventType, RSVP, 
     const formattedDate = getMonthAndDay(date);
     return (
         <div className="flex flex-row gap-2 w-full">
-            <div className="bg-[var(--color-primary-blue)] text-white font-montserrat flex flex-col items-center justify-center p-2 rounded-lg shadow-lg">
+            <div className="bg-[var(--color-primary-blue)] text-white font-montserrat flex flex-col items-center justify-center h-20 w-24 p-2 rounded-lg shadow-lg">
                 <p className="font-bold text-shadow-lg">{formattedDate}</p>
                 <p className="font-normal text-shadow-lg">{time}</p>
             </div>
