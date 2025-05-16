@@ -19,8 +19,8 @@ const EventsEventSection = async () => {
         //setIsLoading(false);
     }
     return (
-        <section aria-label="Events" className="flex flex-row gap-2 px-4 xl:px-12 py-4">
-            <div className="hidden sm:flex flex-1 bg-black text-white">Filter: WIP</div>
+        <section aria-label="Events" className="flex flex-col sm:flex-row gap-2 px-4 xl:px-12 py-4">
+            <div className="sm:flex flex-1 bg-black text-white">Filter: WIP</div>
             <div className="flex flex-col gap-8 flex-1 sm:flex-3 lg:flex-5">
                 {
                     sanitizedEvents.length > 0
