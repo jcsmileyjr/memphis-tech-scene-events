@@ -1,11 +1,11 @@
 'use client';
+import { useMediaQuery } from 'react-responsive';
 import React, { useEffect, useState } from 'react';
 import Image from 'next/image';
 import Link from 'next/link';
 import LP_Event from "./lp_event";
-import { useMediaQuery } from 'react-responsive';
-import { getEvents } from "@/server/events.server";
 import EventInterface from "@/interfaces/eventInterface";
+import { getEvents } from "@/server/events.server";
 import { sanitizeQuotes } from '@/libs/sanitizeQuotes';
 
 const LP_Events = () => {
@@ -51,10 +51,10 @@ const LP_Events = () => {
                 <div className='flex flex-col sm:flex-row justify-between gap-8 lg:gap-10 xl:gap-8 pb-4 sm:h-[250px] lg:h-[300px] xl:h-[325px] overflow-hidden'>
                     {isMobileDevice && events.length > 0
                         ? events.map((meetup, index) => (
-                            index < 2 && <LP_Event key={meetup.id} name={meetup.name} date={meetup.date} description={meetup.description} iconName={meetup.iconName} />
+                            index < 2 && <LP_Event key={meetup.id} name={meetup.name} date={meetup.date} description={meetup.shortIntro} iconName={meetup.iconName} />
                         ))
                         : events.map((meetup) => (
-                            <LP_Event key={meetup.id} name={meetup.name} date={meetup.date} description={meetup.description} iconName={meetup.iconName} />
+                            <LP_Event key={meetup.id} name={meetup.name} date={meetup.date} description={meetup.shortIntro} iconName={meetup.iconName} />
                         ))}
                 </div>
                 <div className='flex flex-row gap-4 items-center'>
