@@ -53,8 +53,8 @@ const LP_Events = () => {
                         ? events.map((meetup, index) => (
                             index < 2 && <LP_Event key={meetup.id} name={meetup.name} date={meetup.date} description={meetup.shortIntro} iconName={meetup.iconName} />
                         ))
-                        : events.map((meetup) => (
-                            <LP_Event key={meetup.id} name={meetup.name} date={meetup.date} description={meetup.shortIntro} iconName={meetup.iconName} />
+                        : events.map((meetup, index) => (
+                            index < 3 && <LP_Event key={meetup.id} name={meetup.name} date={meetup.date} description={meetup.shortIntro} iconName={meetup.iconName} />
                         ))}
                 </div>
                 <div className='flex flex-row gap-4 items-center'>
