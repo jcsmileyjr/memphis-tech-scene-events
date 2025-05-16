@@ -1,5 +1,6 @@
 import EventsEvent from "./events_Event";
 import EventInterface from "@/interfaces/eventInterface";
+import EventsFilter from "./events_Filter";
 import { getEvents } from "@/server/events.server";
 import { sanitizeQuotes } from '@/libs/sanitizeQuotes';
 
@@ -20,7 +21,7 @@ const EventsEventSection = async () => {
     }
     return (
         <section aria-label="Events" className="flex flex-col sm:flex-row gap-2 px-4 xl:px-12 py-4">
-            <div className="sm:flex flex-1 bg-black text-white">Filter: WIP</div>
+            <EventsFilter />
             <div className="flex flex-col gap-8 flex-1 sm:flex-3 lg:flex-5">
                 {
                     sanitizedEvents.length > 0
