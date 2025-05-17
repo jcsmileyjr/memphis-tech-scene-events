@@ -26,10 +26,10 @@ const Nav = () => {
                     <Link href="/events">Events</Link>
                 </li>
                 <li aria-current={pageLocation === '/' ? 'page' : undefined} className="menu-item cursor-not-allowed bg-[var(--nav-backgroundcolor-dark)] xl:bg-transparent hover:text-[var(--color-primary-blue)] hover:underline">
-                    <Link href="#sponsors">Sponsors</Link>
+                    <Link href="/#sponsors">Sponsors</Link>
                 </li>
                 <li aria-current={pageLocation === '/' ? 'page' : undefined} className="menu-item cursor-not-allowed bg-[var(--nav-backgroundcolor-dark)] xl:bg-transparent hover:text-[var(--color-primary-blue)] hover:underline">
-                    <Link href="#partners">Partners</Link>
+                    <Link href="/#partners">Partners</Link>
                 </li>
             </ul>
             <button
