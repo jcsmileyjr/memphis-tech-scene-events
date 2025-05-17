@@ -22,6 +22,7 @@ const CTAEvents = () => {
                         Submit Event    
                     </button>
                 </div>
+                <p className='text-lg text-red-900 mt-2 text-center'>Coming Soon!!!</p>
             </div>
         </section>
     );
