@@ -62,7 +62,7 @@ const LP_Events = () => {
                         <p className='font-medium text-xl font-montserrat underline text-[var(--color-primary-blue)]'>View All Events</p>
                     </Link>
                     <div className='bg-[var(--event-pill-backgroundcolor)] py-2 px-6 shadow-md'>
-                        <p className='text-center font-montserrat text-sm'>15 total</p>
+                        <p className='text-center font-montserrat text-sm'>{events.length} total</p>
                     </div>
                 </div>
             </div>
