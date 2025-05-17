@@ -1,17 +1,13 @@
 "use client";
 import { useEventFilter } from "@/Context/EventFilterContext";
+import fakeEvents from "@/data/fakeEvents";
 
-const FILTERS = [
-    "All Events",
-    "AI",
-    "Data",
-    "Entrepreneur",
-    "Networking",
-    "Tech Workshops",
-    "Virtual",
-    "Tech Talk",
-    "In-Person",
-];
+const categories = Array.from(
+    new Set(fakeEvents.map(event => event.eventCategory).filter(Boolean))
+);
+const types = fakeEvents.map(event => event.eventType).filter(Boolean);
+const uniqueFilters = Array.from(new Set([...categories, ...types]));
+const FILTERS = ["All Events", ...uniqueFilters];
 
 const EventsFilter = () => {
     const { filter, setFilter } = useEventFilter();
