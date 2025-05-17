@@ -37,10 +37,12 @@ const EventsEventSection = () => {
     const filteredEvents =
         filter === "All Events"
             ? sanitizedEvents
-            : sanitizedEvents.filter((event) => {
-                  event.eventCategory?.toLowerCase() === filter.toLowerCase() ||
-                      event.eventType?.toLowerCase() === filter.toLowerCase();
-              });
+            : sanitizedEvents.filter(
+                (event) =>
+                    event.eventCategory?.toLowerCase() ===
+                        filter.toLowerCase() ||
+                    event.eventType?.toLowerCase() === filter.toLowerCase()
+            );
 
     return (
         <section
