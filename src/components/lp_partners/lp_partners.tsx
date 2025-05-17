@@ -17,7 +17,7 @@ const LpPartners = async () => {
 
     if (partners.length === 0) {
         return (
-            <section aria-label="Partners Section" className="flex flex-col pt-8">
+            <section id="partners" aria-label="Partners Section" className="flex flex-col pt-8">
                 <h2 className="text-2xl xl:text-5xl font-bold font-montserrat pb-4">Our Partners</h2>
                 <p className="text-center text-gray-700 font-normal">No partners available at the moment.</p>
             </section>
@@ -25,7 +25,7 @@ const LpPartners = async () => {
     }
 
     return (
-        <section aria-label="Partners Section" className="flex flex-col pt-8 text-base sm:text-xl gap-y-4 pb-8">
+        <section id="partners" aria-label="Partners Section" className="flex flex-col pt-8 text-base sm:text-xl gap-y-4 pb-8">
             <h2 className="text-2xl xl:text-5xl font-bold font-montserrat pb-4">Our Partners</h2>
             <p className="font-medium">The Memphis tech community shines so brightly because of the incredible, unwavering dedication of individuals and organizations, such as these, who tirelessly teach, empower, and uplift one another.</p>
             <p className="font-normal">&ldquo;Alone we can do so little; together we can do so much.&rdquo;    — Helen Keller</p>
