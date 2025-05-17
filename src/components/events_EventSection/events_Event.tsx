@@ -19,7 +19,7 @@ const EventsEvent = ({ name, date, description, eventCategory, eventType, RSVP, 
                 <div className="flex flex-col items-start gap-4">
                     <p className="text-xl font-montserrat font-medium text-[var(--color-primary-blue)] text-shadow-lg">{name}</p>
                     <p className="text-base font-quicksand font-semibold text-shadow-lg">{description}</p>
-                    <Link href={RSVP} className="cursor-not-allowed text-[#4a4a4a] font-montserrat text-xl underline font-bold text-shadow-lg">
+                    <Link href={RSVP} className="text-[#4a4a4a] font-montserrat text-xl underline font-bold text-shadow-lg">
                         Click here for details
                     </Link>
                 </div>
@@ -37,7 +37,7 @@ const EventsEvent = ({ name, date, description, eventCategory, eventType, RSVP, 
                         <User color="black" className='w-4 h-4 bg-transparent shadow-lg' />
                         <p className="text-sm font-montserrat font-semibold text-shadow-lg">{eventType}</p>
                     </div>
-                    <Link href={RSVP} className="cursor-not-allowed text-[#4a4a4a] font-montserrat text-xl underline font-bold text-shadow-lg">RSVP</Link>
+                    <Link href={RSVP} className="text-[#4a4a4a] font-montserrat text-xl underline font-bold text-shadow-lg">RSVP</Link>
                 </div>
                 <div className="text-base font-quicksand font-semibold text-shadow-lg">{description}</div>
             </div>            
