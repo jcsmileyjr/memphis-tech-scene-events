@@ -17,12 +17,12 @@ const CTAEvents = () => {
                     Got an upcoming tech event? Let&#39;s get it seen, shared, and celebrated! Submit it now and we&#39;ll 
                     <span className="text-[var(--color-primary-blue)]"> blast it across our newsletter, socials, and community.</span> Because we believe that great ideas deserve to be supported.
                 </p>
-                <div className='flex justify-center items-center mt-4'>
+                {/* <div className='flex justify-center items-center mt-4'>
                     <button type='button' className="cursor-not-allowed w-2/3 lg:w-1/2 xl:w-1/3 bg-[var(--color-primary-blue)] font-montserrat text-white font-bold text-xl px-4 py-2 rounded-md transition hover:bg-white hover:text-[var(--color-primary-blue)]   duration-300 ease-in-out">
                         Submit Event    
                     </button>
-                </div>
-                <p className='text-lg text-red-900 mt-2 text-center'>Coming Soon!!!</p>
+                </div> */}
+                <p className='text-xl text-red-900 mt-2 text-center'>Coming Soon!!!</p>
             </div>
         </section>
     );
