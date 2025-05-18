@@ -5,6 +5,9 @@ module.exports = {
         fontFamily: {
           quicksand: 'var(--font-quicksand)',
         },
+        screens: {
+          '3xl': '2300px',
+        },
       },
     },
     utilities: {

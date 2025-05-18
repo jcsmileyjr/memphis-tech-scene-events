@@ -2,7 +2,7 @@ import Image from 'next/image';
 
 const CTAEvents = () => {
     return (
-        <section className="flex flex-col-reverse gap-4 md:flex-row-reverse md:gap-8 lg:flex-row xl:gap-0 justify-between items-center pt-8">
+        <section className="flex flex-col-reverse gap-4 md:flex-row-reverse md:gap-8 lg:flex-row xl:gap-0 justify-between items-center pt-8 2xl:mx-auto 2xl:w-full 2xl:max-w-[2300px]">
             <div className='flex-1 flex justify-center items-center mt-4 lg:mt-0'>
                 <Image 
                     src="/images/community_2.jpeg" 

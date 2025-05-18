@@ -8,7 +8,7 @@ const EventsPage = () => {
     return (
         <div className="min-h-screen gap-16 font-quicksand">
             <Nav />
-            <main className="flex flex-col">
+            <main className="flex flex-col 2xl:mx-auto 2xl:w-full 2xl:max-w-[2300px]">
                 <div className="flex flex-row pb-2 px-4 xl:px-12">
                     <Image
                         src="/images/coder-logo.png"

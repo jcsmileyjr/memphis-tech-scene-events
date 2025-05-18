@@ -11,8 +11,8 @@ export default function Home() {
   return (
     <div className=" min-h-screen gap-16 font-quicksand">
       <Nav />
-      <main className="flex flex-col">
-        <div className="flex flex-col gap-2 px-4 xl:px-12">
+      <main className="flex flex-col ">
+        <div className="flex flex-col gap-2 px-4 xl:px-12 2xl:mx-auto 2xl:w-full 2xl:max-w-[2300px]">
           <Teaser />
           <LP_Testimonials />
           <LP_Events />
