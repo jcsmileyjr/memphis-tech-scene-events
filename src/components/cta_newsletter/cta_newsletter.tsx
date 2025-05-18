@@ -3,7 +3,7 @@ import Link from 'next/link';
 
 const CTA_Newsletter = () => {
     return (
-        <section className="flex flex-col md:flex-row-reverse md:gap-8 lg:flex-row justify-between items-center pb-8 pt-8 gap-4 md:gap-0">
+        <section className="flex flex-col md:flex-row-reverse md:gap-8 lg:flex-row justify-between items-center pb-8 pt-8 gap-4 md:gap-0 2xl:mx-auto 2xl:w-full 2xl:max-w-[2300px]">
             <div className='w-full flex flex-col md:flex-row gap-4 flex-1 justify-center'>
                 <div className='flex flex-row justify-between md:justify-center items-center'>
                     <Image 

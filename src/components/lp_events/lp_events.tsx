@@ -45,7 +45,7 @@ const LP_Events = () => {
     }
 
     return (
-        <section aria-label="Events Section" className="py-4 flex flex-col xl:flex-row gap-8 sm:gap-4 justify-between">
+        <section aria-label="Events Section" className="py-4 flex flex-col xl:flex-row gap-8 sm:gap-4 justify-between 2xl:mx-auto 2xl:w-full 2xl:max-w-[2300px]">
             <div className='flex-1 flex flex-col justify-between'>
                 <h2 className=" text-2xl xl:text-5xl font-bold font-montserrat pb-4">Upcoming Events</h2>
                 <div className='flex flex-col sm:flex-row justify-between gap-8 lg:gap-10 xl:gap-8 pb-4 sm:h-[250px] lg:h-[300px] xl:h-[325px] overflow-hidden'>
