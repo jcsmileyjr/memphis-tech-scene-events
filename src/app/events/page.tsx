@@ -1,4 +1,4 @@
-'use client";'
+'use client';
 import Nav from "@/components/nav/nav";
 import Teaser from "@/components/teaser/teaser";
 import Image from "next/image";
@@ -12,7 +12,7 @@ const EventsPage = () => {
                 <div className="flex flex-row pb-2 px-4 xl:px-12">
                     <Image
                         src="/images/coder-logo.png"
-                        alt="Logo"
+                        alt="Memphis Tech Scene Logo"
                         width={1000}
                         height={500}
                         className="w-20 h-20 object-cover hidden sm:block"
