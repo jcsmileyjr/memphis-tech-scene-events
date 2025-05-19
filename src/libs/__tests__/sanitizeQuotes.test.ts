@@ -5,13 +5,14 @@ describe('sanitizeQuotes', () => {
         expect(sanitizeQuotes('5 > 3 & 2 < 4')).toBe('5 &gt; 3 &amp; 2 &lt; 4');
     });
 
-    it('leaves apostrophes and quotes untouched', () => {
-        expect(sanitizeQuotes(`It's "great"`)).toBe(`It's "great"`);
+    it('ensures apostrophes and quotes do not break HTML', () => {
+        expect(sanitizeQuotes(`It's "great"`)).toBe(`It’s &quot;great&quot;`);
     });
 
-    it('handles mixed input', () => {
+    const expectedOutput = `Tom &amp; Jerry’s &lt;adventure&gt; &quot;rocks&quot;`;
+    it('handles mixed input & not break HTML', () => {
         expect(sanitizeQuotes(`Tom & Jerry's <adventure> "rocks"`))
-        .toBe('Tom &amp; Jerry\'s &lt;adventure&gt; "rocks"');
+        .toBe(expectedOutput);
     });
 
     it('returns empty string if input is empty', () => {
