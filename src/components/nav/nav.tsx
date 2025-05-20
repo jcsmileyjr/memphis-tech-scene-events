@@ -27,7 +27,6 @@ const Nav = () => {
                 }`}
             >
                 <ul
-                    onClick={handleToggleMenu}
                     className={` xl:flex flex-row flex-wrap gap-4 text-xl font-quicksand  ${
                         expanded
                             ? " absolute top-0 left-0 z-50 bg-[var(--nav-backgroundcolor-dark)] pt-14 pb-8 px-8 w-full flex flex-col justify-center items-center"
@@ -35,6 +34,7 @@ const Nav = () => {
                     }`}
                 >
                     <li
+                        onClick={handleToggleMenu}
                         aria-current={pageLocation === "/" ? "page" : undefined}
                         className={`${
                             pageLocation === "/"
@@ -45,6 +45,7 @@ const Nav = () => {
                         <Link href="/">Home</Link>
                     </li>
                     <li
+                        onClick={handleToggleMenu}
                         aria-current={pageLocation === "/" ? "page" : undefined}
                         className={`${
                             pageLocation === "/events"
@@ -55,12 +56,14 @@ const Nav = () => {
                         <Link href="/events">Events</Link>
                     </li>
                     <li
+                        onClick={handleToggleMenu}
                         aria-current={pageLocation === "/#sponsors" ? "page" : undefined}
                         className="menu-item cursor-not-allowed bg-[var(--nav-backgroundcolor-dark)] xl:bg-transparent hover:text-[var(--color-primary-blue)] hover:underline"
                     >
                         <Link href="/#sponsors">Sponsors</Link>
                     </li>
                     <li
+                        onClick={handleToggleMenu}
                         aria-current={pageLocation === "/#partners" ? "page" : undefined}
                         className="menu-item cursor-not-allowed bg-[var(--nav-backgroundcolor-dark)] xl:bg-transparent hover:text-[var(--color-primary-blue)] hover:underline"
                     >
