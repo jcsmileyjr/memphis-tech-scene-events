@@ -20,6 +20,7 @@ const LP_Testimonials = () => {
     );
     const [isLoading, setIsLoading] = useState(true);
     const isTabletOrMobile = useMediaQuery({ query: "(max-width: 1280px)" });
+    const [error, setError] = useState<string | null>(null);
 
     useEffect(() => {
         const fetchTestimonials = async () => {
@@ -38,6 +39,7 @@ const LP_Testimonials = () => {
                 setTestimonials(sanitizedTestimonials);
             } catch (error) {
                 console.error("Failed to fetch testimonials:", error);
+                setError("Failed to load testimonials. Please try again later.");
             } finally {
                 setIsLoading(false);
             }
@@ -47,17 +49,31 @@ const LP_Testimonials = () => {
 
     if (isLoading) {
         return (
-            <p className="text-center font-normal text-gray-700">
-                Loading testimonials...
-            </p>
+            <section aria-label="Testimonials Section" className="flex flex-col py-8">
+                <p className="text-center font-normal text-gray-700">
+                    Loading testimonials...
+                </p>
+            </section>
+        );
+    }
+
+    if (error) {
+        return (
+            <section aria-label="Testimonials Section" className="py-8">
+                <p className="text-center text-red-600 font-normal">
+                    {error}
+                </p>
+            </section>
         );
     }
 
     if (!isLoading && testimonials.length === 0) {
         return (
-            <p className="text-center text-gray-700 font-normal">
-                No testimonials available at the moment.
-            </p>
+            <section aria-label="Testimonials Section" className="flex flex-col py-8">
+                <p className="text-center text-gray-700 font-normal">
+                    No testimonials available at the moment.
+                </p>
+            </section>
         );
     }
 
