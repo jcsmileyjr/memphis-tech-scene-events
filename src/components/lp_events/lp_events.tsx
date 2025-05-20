@@ -24,7 +24,7 @@ const LP_Events = () => {
                 }));
                 setEvents(sanitizedEvents);
             } catch (error) {
-                console.error("Failed to fetch events:", error);
+                console.error("Failed to fetch events on the landing page:", error);
             } finally {
                 setIsLoading(false);
             }

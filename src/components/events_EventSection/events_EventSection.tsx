@@ -26,7 +26,7 @@ const EventsEventSection = () => {
                     }))
                 );
             } catch (error) {
-                console.error("Failed to fetch events:", error);
+                console.error("Failed to fetch events on the events page:", error);
             } finally {
                 setLoading(false);
             }
