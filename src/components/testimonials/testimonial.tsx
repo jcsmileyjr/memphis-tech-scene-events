@@ -5,14 +5,14 @@ interface TestimonialProps {
     community: string;
 }
 
-const Testimonial = ({content, name, title,community}:TestimonialProps) => {
-    const profile = `${name} — ${title}, ${community}`
+const Testimonial = ({ content, name, title, community }: TestimonialProps) => {
+    const profile = `${name} — ${title}, ${community}`;
     return (
         <div className="font-quicksand font-normal w-full xl:max-w-[45%]">
             <p>{content}</p>
             <div className="font-bold">{profile}</div>
         </div>
-    )
-}
+    );
+};
 
-export default Testimonial
+export default Testimonial;

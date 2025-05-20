@@ -1,4 +1,5 @@
 import { getMonthAndDay } from '../getMonthAndDay';
+import { expect } from '@jest/globals';
 
 describe('getMonthAndDay', () => {
     it('returns correct month and day for a valid date', () => {

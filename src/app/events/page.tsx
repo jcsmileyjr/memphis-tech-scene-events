@@ -1,4 +1,4 @@
-'use client';
+"use client";
 import Nav from "@/components/nav/nav";
 import Teaser from "@/components/teaser/teaser";
 import Image from "next/image";
@@ -25,6 +25,6 @@ const EventsPage = () => {
             </main>
         </div>
     );
-}
+};
 
 export default EventsPage;

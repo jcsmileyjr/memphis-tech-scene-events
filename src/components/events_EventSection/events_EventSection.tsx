@@ -26,7 +26,10 @@ const EventsEventSection = () => {
                     }))
                 );
             } catch (error) {
-                console.error("Failed to fetch events on the events page:", error);
+                console.error(
+                    "Failed to fetch events on the events page:",
+                    error
+                );
             } finally {
                 setLoading(false);
             }
@@ -38,11 +41,11 @@ const EventsEventSection = () => {
         filter === "All Events"
             ? sanitizedEvents
             : sanitizedEvents.filter(
-                (event) =>
-                    event.eventCategory?.toLowerCase() ===
-                        filter.toLowerCase() ||
-                    event.eventType?.toLowerCase() === filter.toLowerCase()
-            );
+                  (event) =>
+                      event.eventCategory?.toLowerCase() ===
+                          filter.toLowerCase() ||
+                      event.eventType?.toLowerCase() === filter.toLowerCase()
+              );
 
     return (
         <section
