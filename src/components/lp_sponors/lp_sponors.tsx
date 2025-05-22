@@ -5,6 +5,7 @@ import { sanitizeQuotes } from "@/libs/sanitizeQuotes";
 
 const LpSponors = async () => {
     let sponsors: SponorInterface[] = [];
+    let fetchError = false;
     try {
         sponsors = await getSponsors();
 
@@ -14,14 +15,32 @@ const LpSponors = async () => {
         }
     } catch (error) {
         console.error("Failed to fetch sponsors:", error);
+        fetchError = true;
     }
+
+    if (fetchError) {
+        return (
+            <section
+                id="sponsors"
+                aria-label="Sponsors Section"
+                className="flex flex-col pt-8 2xl:mx-auto 2xl:w-full 2xl:max-w-[2300px]"
+            >
+                <h2 className="text-2xl xl:text-5xl font-bold font-montserrat pb-4">
+                    Our Sponsors
+                </h2>
+                <p className="text-center text-red-700 font-normal" role="alert">
+                    Failed to load sponsors. Please try again later.
+                </p>
+            </section>
+        );
+    }      
 
     if (sponsors.length === 0) {
         return (
             <section
                 id="sponsors"
                 aria-label="Sponsors Section"
-                className="flex flex-col pt-8"
+                className="flex flex-col pt-8 2xl:mx-auto 2xl:w-full 2xl:max-w-[2300px]"
             >
                 <h2 className="text-2xl xl:text-5xl font-bold font-montserrat pb-4">
                     Our Sponsors
