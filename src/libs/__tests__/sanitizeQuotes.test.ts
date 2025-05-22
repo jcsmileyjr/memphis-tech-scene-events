@@ -1,7 +1,8 @@
 import { sanitizeQuotes } from "../sanitizeQuotes";
+import { expect } from '@jest/globals';
 
 describe('sanitizeQuotes', () => {
-    it('escapes ampersands, less-than, and greater-than', () => {
+    it('escapes less-than, and greater-than', () => {
         expect(sanitizeQuotes('5 > 3 & 2 < 4')).toBe('5 &gt; 3 & 2 &lt; 4');
     });
 
