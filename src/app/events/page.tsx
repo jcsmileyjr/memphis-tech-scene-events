@@ -6,10 +6,10 @@ import EventsEventSection from "@/components/events_EventSection/events_EventSec
 import { EventFilterProvider } from "@/Context/EventFilterContext";
 const EventsPage = () => {
     return (
-        <div className="min-h-screen gap-16 font-quicksand">
+        <div className="min-h-screen font-quicksand">
             <Nav />
-            <main className="flex flex-col 2xl:mx-auto 2xl:w-full 2xl:max-w-[2300px]">
-                <div className="flex flex-row pb-2 px-4 xl:px-12">
+            <main className="flex flex-col w-full 2xl:mx-auto 2xl:max-w-[2300px]">
+                <header className="flex flex-row pb-2 px-4 xl:px-12">
                     <Image
                         src="/images/coder-logo.png"
                         alt="Memphis Tech Scene Logo"
@@ -18,7 +18,7 @@ const EventsPage = () => {
                         className="w-20 h-20 object-cover hidden sm:block"
                     />
                     <Teaser />
-                </div>
+                </header>
                 <EventFilterProvider>
                     <EventsEventSection />
                 </EventFilterProvider>
