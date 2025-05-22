@@ -11,6 +11,7 @@ import { sanitizeQuotes } from "@/libs/sanitizeQuotes";
 const LP_Events = () => {
     const [events, setEvents] = useState<EventInterface[]>([]);
     const [isLoading, setIsLoading] = useState(true);
+    const [error, setError] = useState<string | null>(null);
     const isMobileDevice = useMediaQuery({ query: "(max-width: 767px)" });
 
     useEffect(() => {
@@ -28,6 +29,7 @@ const LP_Events = () => {
                     "Failed to fetch events on the landing page:",
                     error
                 );
+                setError("Failed to load events. Please try again later.");
             } finally {
                 setIsLoading(false);
             }
@@ -37,17 +39,32 @@ const LP_Events = () => {
 
     if (isLoading) {
         return (
-            <p className="text-center font-normal text-gray-700">
-                Loading events...
-            </p>
+            <section aria-label="Events Section" className="2xl:mx-auto 2xl:w-full 2xl:max-w-[2300px] py-8">
+                <p className="text-center font-normal text-gray-700">
+                    Loading events...
+                </p>
+            </section>
         );
     }
 
+    if (error) {
+        return (
+            <section aria-label="Events Section" className="py-8 2xl:w-full 2xl:max-w-[2300px]">
+                <p className="text-center text-red-600 font-normal">
+                    {error}
+                </p>
+            </section>
+        );
+    }            
+    
+
     if (!isLoading && events.length === 0) {
         return (
-            <p className="text-center text-gray-700 font-normal">
-                No events available at the moment.
-            </p>
+            <section aria-label="Events Section" className="2xl:mx-auto 2xl:w-full 2xl:max-w-[2300px] py-8">
+                <p className="text-center text-gray-700 font-normal">
+                    No events available at the moment.
+                </p>
+            </section>
         );
     }
 
