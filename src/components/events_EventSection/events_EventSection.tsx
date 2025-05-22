@@ -52,7 +52,7 @@ const EventsEventSection = () => {
     if (error) {
         return (
             <section aria-label="Events Section" className="py-8 px-4 xl:px-12 py-4">
-                <p className="text-center text-red-600 font-normal">
+                <p className="text-center text-red-600 font-normal" role="alert">
                     {error}
                 </p>
             </section>

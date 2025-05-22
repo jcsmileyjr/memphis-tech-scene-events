@@ -4,6 +4,8 @@ import { sanitizeQuotes } from "@/libs/sanitizeQuotes";
 
 const LpPartners = async () => {
     let partners: PartnerInterface[] = [];
+    let fetchError = false;
+
     try {
         partners = await getPartners();
 
@@ -12,7 +14,25 @@ const LpPartners = async () => {
         }
     } catch (error) {
         console.error("Failed to fetch partners:", error);
+        fetchError = true;
     }
+
+    if (fetchError) {
+        return (
+            <section
+                id="partners"
+                aria-label="Partners Section"
+                className="flex flex-col pt-8 2xl:mx-auto 2xl:w-full 2xl:max-w-[2300px]"
+            >
+                <h2 className="text-2xl xl:text-5xl font-bold font-montserrat pb-4">
+                    Our Partners
+                </h2>
+                <p className="text-center text-red-700 font-normal" role="alert">
+                    Failed to load partners. Please try again later.
+                </p>
+            </section>
+        );
+    }    
 
     if (partners.length === 0) {
         return (
@@ -24,7 +44,7 @@ const LpPartners = async () => {
                 <h2 className="text-2xl xl:text-5xl font-bold font-montserrat pb-4">
                     Our Partners
                 </h2>
-                <p className="text-center text-gray-700 font-normal">
+                <p className="text-center text-white font-normal">
                     No partners available at the moment.
                 </p>
             </section>
