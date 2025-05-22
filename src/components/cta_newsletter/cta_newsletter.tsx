@@ -24,12 +24,12 @@ const CTA_Newsletter = () => {
                     <p className="text-xl font-medium md:font-semibold">
                         Subscribe to our newsletter
                     </p>
-                    <Link
-                        href="https://memphistechscene.beehiiv.com/"
-                        className="text-[var(--color-primary-blue)] bg-white font-bold text-xl px-2 py-2 text-center rounded-md mt-4 border-1 border-solid border-[var(--color-primary-blue)] hover:bg-[var(--color-primary-blue)] hover:text-white transition duration-300 ease-in-out"
-                    >
-                        Subscribe
-                    </Link>
+                    <iframe
+                        src="https://embeds.beehiiv.com/f33c038a-7b86-4e34-b347-e0e27d4ff7fb?slim=true"
+                        data-test-id="beehiiv-embed"
+                        height="52"
+                        className="border-radius-4 border-0 w-full bg-transparent"
+                    ></iframe>
                 </div>
             </div>
             <div className="flex-1 flex justify-center items-center mt-4 md:mt-0">
