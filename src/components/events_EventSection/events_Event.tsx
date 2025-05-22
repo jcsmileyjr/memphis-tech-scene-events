@@ -1,5 +1,6 @@
 import { User } from "lucide-react";
 import Link from "next/link";
+import React from "react";
 import EventInterface from "@/interfaces/eventInterface";
 import { getMonthAndDay } from "@/libs/getMonthAndDay";
 
@@ -78,4 +79,4 @@ const EventsEvent = ({
     );
 };
 
-export default EventsEvent;
+export default React.memo(EventsEvent);
