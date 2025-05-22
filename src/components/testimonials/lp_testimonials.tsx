@@ -1,9 +1,6 @@
-"use client";
-import { useEffect, useState } from "react";
 import Testimonial from "./testimonial";
-import { getTestimonials } from "@/server/testimonial.server";
+// import { getTestimonials } from "@/server/testimonial.server"; // Leave this commented out for now
 import TestimonialInterface from "@/interfaces/testimonialInterface";
-import { useMediaQuery } from "react-responsive";
 import { sanitizeQuotes } from "@/libs/sanitizeQuotes";
 
 const PLACEHOLDER_TESTIMONIALS: TestimonialInterface[] = [
@@ -32,44 +29,33 @@ const PLACEHOLDER_TESTIMONIALS: TestimonialInterface[] = [
  * @returns A section element containing the testimonials.
  */
 const LP_Testimonials = () => {
-    const [testimonials, setTestimonials] = useState<TestimonialInterface[]>(
-        PLACEHOLDER_TESTIMONIALS
-    );
-    const [isLoading, setIsLoading] = useState(true);
-    const isTabletOrMobile = useMediaQuery({ query: "(max-width: 1280px)" });
-    const [error, setError] = useState<string | null>(null);
+    const sanitizedTestimonials = PLACEHOLDER_TESTIMONIALS.map(
+        (testimonial) => ({
+            ...testimonial,
+            content: sanitizeQuotes(testimonial.content),
+            name: sanitizeQuotes(testimonial.name),
+            title: sanitizeQuotes(testimonial.title),
+            community: sanitizeQuotes(testimonial.community),
+        })
+    );    
 
-    useEffect(() => {
-        const fetchTestimonials = async () => {
-            try {
-                const fetchedTestimonials: TestimonialInterface[] =
-                    await getTestimonials();
-                const sanitizedTestimonials = fetchedTestimonials.map(
-                    (testimonial) => ({
-                        ...testimonial,
-                        content: sanitizeQuotes(testimonial.content),
-                        name: sanitizeQuotes(testimonial.name),
-                        title: sanitizeQuotes(testimonial.title),
-                        community: sanitizeQuotes(testimonial.community),
-                    })
-                );
-                setTestimonials(sanitizedTestimonials);
-            } catch (error) {
-                console.error("Failed to fetch testimonials:", error);
-                setError("Failed to load testimonials. Please try again later.");
-            } finally {
-                setIsLoading(false);
-            }
-        };
-        fetchTestimonials();
-    }, []);
-
-    if (isLoading) {
-        return (
-            <section aria-label="Testimonials Section" className="flex flex-row flex-wrap justify-between gap-2 py-8">
-                {/* Placeholder for loading state */}
+    return (
+        <section
+            aria-label="Testimonials Section"
+            className=""
+        >
+            <div className="xl:hidden flex-row flex-wrap justify-between gap-2 py-4">
+                <Testimonial
+                    key={sanitizedTestimonials[0].testimonialId}
+                    content={sanitizedTestimonials[0].content}
+                    name={sanitizedTestimonials[0].name}
+                    title={sanitizedTestimonials[0].title}
+                    community={sanitizedTestimonials[0].community}
+                />
+            </div>
+            <div className="hidden xl:flex flex-row flex-wrap justify-between gap-2 py-4 2xl:mx-auto 2xl:w-full 2xl:max-w-[2300px]">
                 {
-                    testimonials.map((testimonial) => (
+                    sanitizedTestimonials.map((testimonial) => (
                         <Testimonial
                             key={testimonial.testimonialId}
                             content={testimonial.content}
@@ -78,55 +64,8 @@ const LP_Testimonials = () => {
                             community={testimonial.community}
                         />
                     ))
-                }
-            </section>
-        );
-    }
-
-    if (error) {
-        return (
-            <section aria-label="Testimonials Section" className="py-8 2xl:mx-auto 2xl:w-full 2xl:max-w-[2300px]">
-                <p className="text-center text-red-600 font-normal" role="alert">
-                    {error}
-                </p>
-            </section>
-        );
-    }
-
-    if (!isLoading && testimonials.length === 0) {
-        return (
-            <section aria-label="Testimonials Section" className="flex flex-col py-8">
-                <p className="text-center text-gray-700 font-normal">
-                    No testimonials available at the moment.
-                </p>
-            </section>
-        );
-    }
-
-    return (
-        <section
-            aria-label="Testimonials Section"
-            className="flex flex-row flex-wrap justify-between gap-2 py-4 2xl:mx-auto 2xl:w-full 2xl:max-w-[2300px]"
-        >
-            {isTabletOrMobile && testimonials.length > 0 ? (
-                <Testimonial
-                    key={testimonials[0].testimonialId}
-                    content={testimonials[0].content}
-                    name={testimonials[0].name}
-                    title={testimonials[0].title}
-                    community={testimonials[0].community}
-                />
-            ) : (
-                testimonials.map((testimonial) => (
-                    <Testimonial
-                        key={testimonial.testimonialId}
-                        content={testimonial.content}
-                        name={testimonial.name}
-                        title={testimonial.title}
-                        community={testimonial.community}
-                    />
-                ))
-            )}
+                } 
+            </div>
         </section>
     );
 };
