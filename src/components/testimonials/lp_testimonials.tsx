@@ -59,7 +59,7 @@ const LP_Testimonials = () => {
 
     if (error) {
         return (
-            <section aria-label="Testimonials Section" className="py-8">
+            <section aria-label="Testimonials Section" className="py-8 2xl:mx-auto 2xl:w-full 2xl:max-w-[2300px]">
                 <p className="text-center text-red-600 font-normal">
                     {error}
                 </p>
