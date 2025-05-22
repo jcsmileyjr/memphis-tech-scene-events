@@ -1,8 +1,6 @@
-"use client";
 import Testimonial from "./testimonial";
 // import { getTestimonials } from "@/server/testimonial.server"; // Leave this commented out for now
 import TestimonialInterface from "@/interfaces/testimonialInterface";
-import { useMediaQuery } from "react-responsive";
 import { sanitizeQuotes } from "@/libs/sanitizeQuotes";
 
 const PLACEHOLDER_TESTIMONIALS: TestimonialInterface[] = [
@@ -31,8 +29,6 @@ const PLACEHOLDER_TESTIMONIALS: TestimonialInterface[] = [
  * @returns A section element containing the testimonials.
  */
 const LP_Testimonials = () => {
-    const isTabletOrMobile = useMediaQuery({ query: "(max-width: 1280px)" });
-
     const sanitizedTestimonials = PLACEHOLDER_TESTIMONIALS.map(
         (testimonial) => ({
             ...testimonial,
@@ -46,9 +42,9 @@ const LP_Testimonials = () => {
     return (
         <section
             aria-label="Testimonials Section"
-            className="flex flex-row flex-wrap justify-between gap-2 py-4 2xl:mx-auto 2xl:w-full 2xl:max-w-[2300px]"
+            className=""
         >
-            {isTabletOrMobile ? (
+            <div className="xl:hidden flex-row flex-wrap justify-between gap-2 py-4">
                 <Testimonial
                     key={sanitizedTestimonials[0].testimonialId}
                     content={sanitizedTestimonials[0].content}
@@ -56,17 +52,20 @@ const LP_Testimonials = () => {
                     title={sanitizedTestimonials[0].title}
                     community={sanitizedTestimonials[0].community}
                 />
-            ) : (
-                sanitizedTestimonials.map((testimonial) => (
-                    <Testimonial
-                        key={testimonial.testimonialId}
-                        content={testimonial.content}
-                        name={testimonial.name}
-                        title={testimonial.title}
-                        community={testimonial.community}
-                    />
-                ))
-            )}
+            </div>
+            <div className="hidden xl:flex flex-row flex-wrap justify-between gap-2 py-4 2xl:mx-auto 2xl:w-full 2xl:max-w-[2300px]">
+                {
+                    sanitizedTestimonials.map((testimonial) => (
+                        <Testimonial
+                            key={testimonial.testimonialId}
+                            content={testimonial.content}
+                            name={testimonial.name}
+                            title={testimonial.title}
+                            community={testimonial.community}
+                        />
+                    ))
+                } 
+            </div>
         </section>
     );
 };
