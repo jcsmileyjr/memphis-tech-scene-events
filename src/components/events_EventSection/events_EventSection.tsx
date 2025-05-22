@@ -13,6 +13,7 @@ const EventsEventSection = () => {
         []
     );
     const [loading, setLoading] = useState(true);
+    const [error, setError] = useState<string | null>(null);
 
     useEffect(() => {
         const fetchEvents = async () => {
@@ -26,7 +27,11 @@ const EventsEventSection = () => {
                     }))
                 );
             } catch (error) {
-                console.error("Failed to fetch events:", error);
+                console.error(
+                    "Failed to fetch events on the events page:",
+                    error
+                );
+                setError("Failed to load events. Please try again later.");
             } finally {
                 setLoading(false);
             }
@@ -44,9 +49,19 @@ const EventsEventSection = () => {
                     event.eventType?.toLowerCase() === filter.toLowerCase()
             );
 
+    if (error) {
+        return (
+            <section aria-label="Events Section" className="py-8 px-4 xl:px-12 py-4">
+                <p className="text-center text-red-600 font-normal" role="alert">
+                    {error}
+                </p>
+            </section>
+        );
+    }            
+
     return (
         <section
-            aria-label="Events"
+            aria-label="Events Section"
             className="flex flex-col sm:flex-row gap-2 px-4 xl:px-12 py-4"
         >
             <EventsFilter />

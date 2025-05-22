@@ -3,9 +3,9 @@ import { useEventFilter } from "@/Context/EventFilterContext";
 import fakeEvents from "@/data/fakeEvents";
 
 const categories = Array.from(
-    new Set(fakeEvents.map(event => event.eventCategory).filter(Boolean))
+    new Set(fakeEvents.map((event) => event.eventCategory).filter(Boolean))
 );
-const types = fakeEvents.map(event => event.eventType).filter(Boolean);
+const types = fakeEvents.map((event) => event.eventType).filter(Boolean);
 const uniqueFilters = Array.from(new Set([...categories, ...types]));
 const FILTERS = ["All Events", ...uniqueFilters];
 
